@@ -3,7 +3,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'ls'
+                sh 'mvn package'
+            }
+        }
+
+        stage('Archive') {
+            steps {
+                sh 'ls target/'
             }
         }
     }
